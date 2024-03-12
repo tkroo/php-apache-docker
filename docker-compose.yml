@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  php-apache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8088:80"
+    volumes:
+      - .:/var/www/html
+    # Add environment variables if needed
+    # Don't push these to repo! Better to use the render.com dashboard
+    # environment:
+    #   - VARIABLE_NAME=value
